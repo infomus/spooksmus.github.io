@@ -3332,6 +3332,7 @@ fieldset[disabled] .btn-info.active {
 .btn-info .badge {
   color: #3498db;
   background-color: #ffffff;
+  size: height: 50px width: 50px;
 }
 .btn-warning {
   color: #ffffff;
