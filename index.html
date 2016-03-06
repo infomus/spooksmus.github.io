@@ -94,8 +94,8 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-        document.getElementById('updatebutton').innerHTML= 'Hello!';
-        document.getElementById('updatebutton').disabled = true;
+       // document.getElementById('updatebutton').innerHTML= 'Hello!';
+        //document.getElementById('updatebutton').disabled = true;
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -166,7 +166,7 @@
         'Thanks for logging in, ' + response.name + '!';
     });
   }
-  
+
 </script>
 
 <!--
