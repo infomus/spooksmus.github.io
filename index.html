@@ -94,6 +94,8 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
+        document.getElementById('updatebutton').innerHTML= 'Hello!';
+        document.getElementById('updatebutton').disabled = true;
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -160,14 +162,6 @@
       console.log('Successful login for: ' + response.name);
       var nameofuser= response.name;
       document.getElementById('Nameoutput').innerHTML = nameofuser;
-      if (response.status === 'connected')
-      {
-        document.getElementById('updatebutton').innerHTML= 'Hello!';
-        document.getElementById('updatebutton').disabled = true;
-      }
-      else
-      {
-        document.getElementById('Nameoutput').innerHTML= 'Welcome to your social media manager!';
       }
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
