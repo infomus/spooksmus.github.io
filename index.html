@@ -61,14 +61,8 @@
                     <li class="page-scroll">
                     <a href="#linkedaccounts">Linked Accounts</a>
                     </li>
-<<<<<<< HEAD
-                    <li class="page-scroll">
-                        <a onclick="signup()" href="">Create a new account</a>
-=======
-                    <li 
+                    <li>
                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sign Up</button>
-                       
->>>>>>> 652e7de90edc409262ece82db2eecef9bd526feb
                     </li>
                 </ul>
             </div>
@@ -164,7 +158,12 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       var name = response.name;
-      document.getElementById("Nameoutput").innerHTML=name;
+      if (response.status === 'connected'){
+        document.getElementById("Nameoutput").innerHTML=name;
+        else {
+          document.getElementById("Nameoutput").innerHTML= Welcome to Your Social Life Manager!;
+        }
+      }
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
@@ -199,15 +198,12 @@
                 <div class="col-lg-12">
                     <img class="img-responsive" src="img/profilepicexample.png" alt="">
                     <div class="intro-text">
-<<<<<<< HEAD
-                        <span class="name">Welcome to your social life manager</span>
-=======
+                       
                         <span class="name" id="Nameoutput">
                         
                         </span>
->>>>>>> 652e7de90edc409262ece82db2eecef9bd526feb
                         <hr class="star-light-dark">
-                        <span class="skills"> <img id="QRcode" src= "https://api.qrserver.com/v1/create-qr-code/?data=&size=220x220&margin=0" alt="" ></span>
+                        <span class="skills"> <img id="QRcode" src= "https://api.qrserver.com/v1/create-qr-code/?data=empty&size=220x220&margin=0" alt="" ></span>
                 </div>
             </div>
         </div>
@@ -241,7 +237,6 @@
         </div>
 
     </section>
-    <script src="parselink.js"> </script>
  
     <!-- Footer -->
     <footer class="text-center">
@@ -270,6 +265,10 @@
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
+
+
+    <!-- functions for buttons -->
+    <script src="parselink.js"> </script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
