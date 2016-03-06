@@ -62,7 +62,7 @@
                     <a href="#linkedaccounts">Linked Accounts</a>
                     </li>
                     <li>
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sign Up</button>
+                    <button type="button" class="btn btn-info btn-lg" id="updatebutton" data-toggle="modal" data-target="#myModal">Sign Up</button>
                     </li>
                 </ul>
             </div>
@@ -160,6 +160,15 @@
       console.log('Successful login for: ' + response.name);
       var nameofuser= response.name;
       document.getElementById('Nameoutput').innerHTML = nameofuser;
+      if (response.status === 'connected')
+      {
+        document.getElementById('updatebutton').innerHTML= 'Hello!';
+        document.getElementById('updatebutton').disabled = true;
+      }
+      else
+      {
+        document.getElementById('Nameoutput').innerHTML= 'Welcome to your social media manager!';
+      }
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
